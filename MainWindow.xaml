@@ -1,0 +1,312 @@
+﻿<Window x:Class="Winamp_WPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Winamp_WPF"
+        mc:Ignorable="d"
+        x:Name="Main" Title="Winamp" Height="690" Width="529" Background="YellowGreen" BorderThickness="0" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize">
+    <Grid RenderTransformOrigin="0.508,0.372" >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="151*"/>
+            <ColumnDefinition Width="20*"/>
+            <ColumnDefinition Width="10*"/>
+            <ColumnDefinition Width="84*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.Background>
+            <RadialGradientBrush>
+                <GradientStop Color="#FF1C1C2B" Offset="0.826"/>
+                <GradientStop Color="#FF383757" Offset="0"/>
+            </RadialGradientBrush>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="235*"></RowDefinition>
+            <RowDefinition Height="439*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Column="3"/>
+        <Border BorderThickness="3" Margin="37,36,128,117" Background="Black">
+            <Border.BorderBrush>
+                <RadialGradientBrush>
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="#FF565660" Offset="1"/>
+                </RadialGradientBrush>
+            </Border.BorderBrush>
+        </Border>
+        <Border BorderThickness="3" Margin="14,5,23,10" Grid.Row="1" Grid.ColumnSpan="4">
+            <Border.BorderBrush>
+                <RadialGradientBrush>
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="#FF565660" Offset="1"/>
+                </RadialGradientBrush>
+            </Border.BorderBrush>
+        </Border>
+        <TextBlock HorizontalAlignment="Left" Margin="225,0,0,0" TextWrapping="Wrap" Text="WINAMP" VerticalAlignment="Top" Foreground="White" FontWeight="Bold" Height="16" Width="53" />
+        <Button x:Name="X_Button" Content="r" HorizontalContentAlignment="Left" Margin="129,0,15,211" BorderBrush="#00707070" Foreground="#FF978355" Background="#00DDDDDD" FontSize="16" FontWeight="Bold" Padding="0,0,0,0" Click="X_Button_Close" FontFamily="Marlett" Grid.Column="3"/>
+        <Line X1="290" Y1="10" X2="480" Y2="10" StrokeThickness="7" Grid.ColumnSpan="4">
+            <Line.Stroke>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFE4C587" Offset="1"/>
+                    <GradientStop Color="#FF868169" Offset="0"/>
+                    <GradientStop Color="#FFF8FBEB" Offset="0.348"/>
+                    <GradientStop Color="#FF534018" Offset="0.504"/>
+                </LinearGradientBrush>
+            </Line.Stroke>
+            <Line.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF331717"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Line.Fill>
+        </Line>
+        <Line X1="290" Y1="10" X2="480" Y2="10" StrokeThickness="7" Margin="-270,0,40,0">
+            <Line.Stroke>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFE4C587" Offset="1"/>
+                    <GradientStop Color="#FF868169" Offset="0"/>
+                    <GradientStop Color="#FFF8FBEB" Offset="0.348"/>
+                    <GradientStop Color="#FF534018" Offset="0.504"/>
+                </LinearGradientBrush>
+            </Line.Stroke>
+            <Line.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF331717"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Line.Fill>
+        </Line>
+        <Border BorderThickness="3" Margin="14,20,23,21" Grid.ColumnSpan="4">
+            <Border.BorderBrush>
+                <RadialGradientBrush>
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="#FF565660" Offset="1"/>
+                </RadialGradientBrush>
+            </Border.BorderBrush>
+            <ProgressBar x:Name="progress_player" Margin="19,106,19,59" BorderBrush="#FF6E6E8A" Background="#FF202032" Value="20" MouseDown="progress_player_MouseDown">
+                <ProgressBar.Foreground>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FFE4C587" Offset="1"/>
+                        <GradientStop Color="#FF868169" Offset="0"/>
+                        <GradientStop Color="#FFF8FBEB" Offset="0.348"/>
+                        <GradientStop Color="#FF534018" Offset="0.504"/>
+                    </LinearGradientBrush>
+                </ProgressBar.Foreground>
+            </ProgressBar>
+        </Border>
+        <Button Content="7" HorizontalAlignment="Left" Margin="57,139,0,0" VerticalAlignment="Top" Width="28" Height="33" RenderTransformOrigin="-0.188,0.43" FontFamily="Marlett" FontSize="22" Foreground="#FF97A8B9" Background="#FFB9C8D2" BorderBrush="White" Click="Prev_Button">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <Button Content="||" HorizontalAlignment="Left" Margin="107,159,0,0" VerticalAlignment="Top" Width="32" Height="28" RenderTransformOrigin="-0.188,0.43" FontFamily="Impact" FontSize="22" Background="#FFB9C8D2" Foreground="#FF97A8B9" BorderBrush="#FFF7F6F6" Padding="0,0,0,5" Click="Pause_Button"/>
+        <Button Content="g" HorizontalAlignment="Left" Margin="144,159,0,0" VerticalAlignment="Top" Width="33" Height="28" RenderTransformOrigin="-0.188,0.43" FontFamily="Marlett" FontSize="22" Background="#FFB9C8D2" Foreground="#FF97A8B9" BorderBrush="White" Click="Stop_Button"/>
+        <Button Content="4" HorizontalAlignment="Left" Margin="70,159,0,0" VerticalAlignment="Top" Width="32" Height="28" RenderTransformOrigin="-0.188,0.43" FontFamily="Marlett" FontSize="22" Background="#FFB9C8D2" Foreground="#FF97A8B9" BorderBrush="#FFF7F6F6" Click="play_click"/>
+        <Button Content="7" HorizontalAlignment="Left" Margin="201,178,0,0" VerticalAlignment="Top" Width="28" Height="33" RenderTransformOrigin="-0.188,0.43" FontFamily="Marlett" FontSize="22" Foreground="#FF97A8B9" Background="#FFB9C8D2" BorderBrush="White" Click="Next_Button">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="268.686"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <Line X1="335" Y1="10" X2="470" Y2="10" StrokeThickness="7" Grid.Row="1" Margin="0,10,-1,-10" Grid.ColumnSpan="4">
+            <Line.Stroke>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFE4C587" Offset="1"/>
+                    <GradientStop Color="#FF868169" Offset="0"/>
+                    <GradientStop Color="#FFF8FBEB" Offset="0.348"/>
+                    <GradientStop Color="#FF534018" Offset="0.504"/>
+                </LinearGradientBrush>
+            </Line.Stroke>
+            <Line.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF331717"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Line.Fill>
+        </Line>
+        <Line X1="300" Y1="10" X2="440" Y2="10" StrokeThickness="7" Grid.Row="1" Margin="-270,10,40,-10">
+            <Line.Stroke>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFE4C587" Offset="1"/>
+                    <GradientStop Color="#FF868169" Offset="0"/>
+                    <GradientStop Color="#FFF8FBEB" Offset="0.348"/>
+                    <GradientStop Color="#FF534018" Offset="0.504"/>
+                </LinearGradientBrush>
+            </Line.Stroke>
+            <Line.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF331717"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Line.Fill>
+        </Line>
+
+        <MediaElement x:Name="Player" HorizontalAlignment="Left" Height="91" Margin="205,8,0,0" VerticalAlignment="Top" Width="130" Grid.Column="3" LoadedBehavior="Play" UnloadedBehavior="Manual" Visibility="Hidden"/>
+        <Slider x:Name="volume_menu" HorizontalAlignment="Left" Margin="183,99,0,0" VerticalAlignment="Top" Width="120" ValueChanged="volume_menu_ValueChanged" Maximum="100" Value="20" ToolTip="{Binding Value, ConverterParameter=int, ElementName=volume_menu}" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}" Height="18" SmallChange="1" IsSelectionRangeEnabled="True" Grid.ColumnSpan="2" GotMouseCapture="volume_menu_GotMouseCapture" LostMouseCapture="volume_menu_LostMouseCapture">
+            <Slider.Resources>
+                <LinearGradientBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFE4C587" Offset="1"/>
+                    <GradientStop Color="#FF868169" Offset="0"/>
+                    <GradientStop Color="#FFF8FBEB" Offset="0.348"/>
+                    <GradientStop Color="#FF534018" Offset="0.504"/>
+                </LinearGradientBrush>
+                <!--<SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="Red" />-->
+            </Slider.Resources>
+        </Slider>
+
+        <Slider x:Name="balance_menu" HorizontalAlignment="Left" Margin="32,99,0,0" VerticalAlignment="Top" Width="60" ValueChanged="balance_menu_ValueChanged" ToolTip="{Binding Value, ElementName=balance_menu}" Grid.ColumnSpan="3" Height="18" Grid.Column="1" SmallChange="1" Minimum="-10" GotMouseCapture="balance_menu_GotMouseCapture" LostMouseCapture="balance_menu_LostMouseCapture"/>
+        <TextBlock HorizontalAlignment="Left" Margin="196,16,0,0" TextWrapping="Wrap" Text="WINAMP PLAYLIST" VerticalAlignment="Top" Foreground="White" FontWeight="Bold" Height="16" Width="112" Grid.Row="1" Grid.ColumnSpan="2" />
+        <Border BorderThickness="3" Margin="36,45,48,78" Grid.Row="1" Background="Black" Grid.ColumnSpan="4">
+            <Border.BorderBrush>
+                <RadialGradientBrush>
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="#FF565660" Offset="1"/>
+                </RadialGradientBrush>
+            </Border.BorderBrush>
+            <ListBox x:Name="List" d:ItemsSource="{d:SampleData ItemCount=5}" Background="{x:Null}" Foreground="#FF37FF00" MouseDoubleClick="List_MouseDoubleClick"/>
+        </Border>
+        <Button x:Name="add_pl" Content="Add" HorizontalAlignment="Left" Margin="54,366,0,0" VerticalAlignment="Top" Width="48" Height="28" RenderTransformOrigin="-0.188,0.43" FontFamily="Arial" FontSize="22" Foreground="#FF6C7782" BorderBrush="#FFF7F6F6" Click="add_click" Grid.Row="1">
+            <Button.Background>
+                <RadialGradientBrush>
+                    <GradientStop Color="#FFECFFFE"/>
+                    <GradientStop Color="#FFB9C8D2" Offset="1"/>
+                </RadialGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button x:Name="del_pl" Content="Rem" HorizontalAlignment="Left" Margin="128,366,0,0" VerticalAlignment="Top" Width="49" Height="28" RenderTransformOrigin="-0.188,0.43" FontFamily="Arial" FontSize="22" Foreground="#FF6C7680" BorderBrush="#FFF7F6F6" Click="rem_click" Grid.Row="1">
+            <Button.Background>
+                <RadialGradientBrush>
+                    <GradientStop Color="#FFECFFFE"/>
+                    <GradientStop Color="#FFB9C8D2" Offset="1"/>
+                </RadialGradientBrush>
+            </Button.Background>
+        </Button>
+        <Border BorderThickness="3" Margin="183,36,45,169" Background="Black" Grid.ColumnSpan="4">
+            <Border.BorderBrush>
+                <RadialGradientBrush>
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="#FF565660" Offset="1"/>
+                </RadialGradientBrush>
+            </Border.BorderBrush>
+            <Label x:Name="songName_label" Content="" Foreground="#FF71FF00" Padding="0,0,0,0" Margin="0,0,0,-8"/>
+        </Border>
+        <Border BorderThickness="3" Margin="183,69,68,136" Background="Black">
+            <Border.BorderBrush>
+                <RadialGradientBrush>
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="#FF565660" Offset="1"/>
+                </RadialGradientBrush>
+            </Border.BorderBrush>
+            <TextBox x:Name="kbps_tb" TextWrapping="Wrap" Text="0" Background="{x:Null}" Foreground="#FF4DFD00" Margin="1,0,1,0"/>
+        </Border>
+        <Border BorderThickness="3" Margin="252,69,0,136" Background="Black">
+            <Border.BorderBrush>
+                <RadialGradientBrush>
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="#FF565660" Offset="1"/>
+                </RadialGradientBrush>
+            </Border.BorderBrush>
+            <TextBox x:Name="khz_tb" TextWrapping="Wrap" Text="0" Foreground="#FF4DFD00" Background="{x:Null}"/>
+        </Border>
+        <Label x:Name="mono_label" Content="mono" HorizontalAlignment="Left" Margin="19,66,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Width="45" Height="25" Foreground="White" Grid.Column="3">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <Label x:Name="stereo_label" Content="stereo" HorizontalAlignment="Left" Margin="75,66,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Width="45" Height="25" Foreground="White" Grid.Column="3">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <Label Content="khz" HorizontalAlignment="Left" Margin="288,66,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Width="46" Height="25" Foreground="White" Grid.ColumnSpan="2">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <Label Content="kbps" HorizontalAlignment="Left" Margin="215,66,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Width="46" Height="25" Foreground="White">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <Label x:Name="time_file_label" HorizontalAlignment="Left" Margin="36,42,0,0" VerticalAlignment="Top" Height="74" Width="120" Foreground="#FF7DFF00" FlowDirection="RightToLeft" FontSize="22" Content="00:00" FontFamily="Cascadia Mono SemiLight"/>
+        <Button x:Name="plus_time" Content="+10sec" HorizontalAlignment="Left" Margin="33,159,0,0" VerticalAlignment="Top" Width="64" Height="28" RenderTransformOrigin="-0.188,0.43" Foreground="#FF626262" BorderBrush="White" Click="Forward_Button" FontFamily="Unispace" Grid.Column="3">
+            <Button.Background>
+                <RadialGradientBrush>
+                    <GradientStop Color="#FFECFFFE"/>
+                    <GradientStop Color="#FFB9C8D2" Offset="1"/>
+                </RadialGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button x:Name="minus_time" Content="-10sec" HorizontalAlignment="Left" Margin="19,159,0,0" VerticalAlignment="Top" Width="56" Height="28" RenderTransformOrigin="-0.188,0.43" FontFamily="Unispace" Foreground="#FF5F6163" BorderBrush="White" Click="Rewind_Button" Grid.ColumnSpan="3" Grid.Column="1">
+            <Button.Background>
+                <RadialGradientBrush>
+                    <GradientStop Color="#FFB9C8D2" Offset="1"/>
+                    <GradientStop Color="#FFECFFFF" Offset="0"/>
+                </RadialGradientBrush>
+            </Button.Background>
+        </Button>
+        <Label x:Name="balance_label" Content="0" HorizontalAlignment="Left" Margin="37,99,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Width="24" Height="21" Foreground="White" Grid.Column="3" Padding="0,0,0,0">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <Label x:Name="volume_label" Content="20" HorizontalAlignment="Left" Margin="7,99,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Width="24" Height="21" Foreground="White" Padding="0,0,0,0" Grid.Column="1">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <Button x:Name="clear_pl" Content="CLS" HorizontalAlignment="Left" Margin="42,366,0,0" VerticalAlignment="Top" Width="49" Height="28" RenderTransformOrigin="-0.188,0.43" FontFamily="Arial" FontSize="22" Foreground="#FF696F75" BorderBrush="#FFF7F6F6" Grid.Row="1" Grid.Column="3" Click="clear_pl_Click">
+            <Button.Background>
+                <RadialGradientBrush>
+                    <GradientStop Color="#FFFFD4D4"/>
+                    <GradientStop Color="#FFB9C8D2" Offset="1"/>
+                </RadialGradientBrush>
+            </Button.Background>
+        </Button>
+        <CheckBox x:Name="rand_checkbox" Content="Rand" HorizontalAlignment="Left" Margin="232,166,0,0" VerticalAlignment="Top" Width="56" Height="21" UseLayoutRounding="False" Background="Gainsboro" BorderBrush="White">
+            <CheckBox.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFFFBB00" Offset="0"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </CheckBox.Foreground>
+        </CheckBox>
+    </Grid>
+</Window>
